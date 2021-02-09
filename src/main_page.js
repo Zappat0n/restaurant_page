@@ -1,9 +1,20 @@
 const mainPage = (() => {
+
   const initialize = () => {
-    console.log('Hi');
+    this.body = document.querySelector('body');
   };
 
-  return { initialize };
+  const addTitle = (title) => {
+    const h1 = document.createElement('h1');
+    h1.textContent = title;
+    this.body.appendChild(h1);
+  };
+
+  const run = () => {
+    addTitle('My Little Tavern');
+  };
+
+  return { initialize, run };
 })();
 
 module.exports = mainPage;
