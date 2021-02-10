@@ -39,7 +39,9 @@ function Tab() {
     container.innerHTML = '';
     addTitle(obj.title);
     addImage(obj.image);
-    addArticle(obj.content);
+    obj.content.forEach(element => {
+      addArticle(element);
+    });
   };
 
   return { initialize, run };

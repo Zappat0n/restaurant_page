@@ -1,22 +1,13 @@
-import mainImage from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
 import Tab from './tab';
+import content from './content';
 
 function MainPage() {
   let container = '';
-  const tabs = {
-    Restaurant: {
-      title: 'My Little Tavern',
-      image: mainImage,
-      content: {
-        title: 'Heavenly food',
-        body: 'I made a reservation in advance for my girlfriend, to say about the food that it was really heaven, we had a very good time, the behavior of the staff was excellent, I will definitely recommend',
-        date: 'Date of visit: February 2021',
-      },
-    },
-  };
+  let tabs;
 
   const initialize = () => {
     container = document.querySelector('#content');
+    tabs = content;
   };
 
   const createTab = (key) => {
@@ -45,7 +36,7 @@ function MainPage() {
 
   const run = () => {
     addTabNavbar();
-    createTab(tabs[ 'Restaurant' ]);
+    createTab(tabs.Restaurant);
   };
 
   return { initialize, run, container };
