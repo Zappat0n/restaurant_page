@@ -4,6 +4,7 @@ $font-family: 'Montserrat', sans-serif;
 
 h1 {
   font: italic normal 600 2.5rem/4rem $font-family;
+
   span {
     font: italic normal 600 1.5rem/4rem $font-family;
   }
@@ -16,7 +17,6 @@ h2 {
 body {
   font: italic normal 400 1rem/2rem $font-family;
 }
-
 
 .main-image {
   display: block;
@@ -42,7 +42,6 @@ nav li {
 nav li:hover {
   cursor: pointer;
 }
-
 
 #content {
   border: 1px solid;

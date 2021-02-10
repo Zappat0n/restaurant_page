@@ -1,7 +1,7 @@
 import TabRestaurant from './tab_restaurant';
 import TabMenu from './tab_menu';
 import TabContact from './tab_contact';
-import styles from './assets/style.scss';
+import styles from './assets/style.scss'; // eslint-disable-line no-unused-vars
 
 function MainPage() {
   let container = '';
