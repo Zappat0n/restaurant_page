@@ -3,9 +3,9 @@ import mainImage from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
 function MainPage() {
   let container = '';
 
-  function initialize() {
+  const initialize = () => {
     container = document.querySelector('#content');
-  }
+  };
 
   const addTitle = (title) => {
     const h1 = document.createElement('h1');
@@ -16,6 +16,7 @@ function MainPage() {
   const addImage = (image) => {
     const myImage = new Image();
     myImage.src = image;
+    myImage.classList.add('main-image');
     container.appendChild(myImage);
   };
 
