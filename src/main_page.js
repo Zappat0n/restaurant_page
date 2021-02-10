@@ -1,33 +1,34 @@
-import Tab from './tab';
-import content from './content';
+import TabRestaurant from './tab_restaurant';
+import TabMenu from './tab_menu';
+import TabContact from './tab_contact';
 
 function MainPage() {
   let container = '';
-  let tabs;
 
   const initialize = () => {
     container = document.querySelector('#content');
-    tabs = content;
   };
 
   const createTab = (key) => {
-    const tab = new Tab();
-    tab.initialize(key);
-    tab.run();
+    switch (key) {
+      case 'Restaurant': (new TabRestaurant()).initialize(); break;
+      case 'Contact': (new TabContact()).initialize(); break;
+      case 'Menu': (new TabMenu()).initialize(); break;
+      default:
+        console.log('Tab not found');
+    }
   };
 
   const addTab = (ul, title) => {
     const li = document.createElement('li');
     ul.appendChild(li);
     li.textContent = title;
-    li.addEventListener('click', (event) => createTab(tabs[event.target.textContent]));
+    li.addEventListener('click', (event) => createTab(event.target.textContent));
   };
 
   const addTabNavbar = () => {
-    const header = document.querySelector('header');
-    const navBar = document.createElement('nav');
+    const navBar = document.querySelector('nav');
     const ul = document.createElement('ul');
-    header.appendChild(navBar);
     navBar.appendChild(ul);
     addTab(ul, 'Restaurant');
     addTab(ul, 'Contact');
@@ -36,7 +37,7 @@ function MainPage() {
 
   const run = () => {
     addTabNavbar();
-    createTab(tabs.Restaurant);
+    createTab('Restaurant');
   };
 
   return { initialize, run, container };
