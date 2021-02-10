@@ -1,6 +1,5 @@
-import mainPage from './main_page';
+import MainPage from './main_page';
 
-mainPage.initialize();
-mainPage.run();
-
-console.log('Hello');
+const main = new MainPage();
+main.initialize();
+main.run();
