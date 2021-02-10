@@ -1,42 +1,51 @@
 import mainImage from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
+import Tab from './tab';
 
 function MainPage() {
   let container = '';
+  const tabs = {
+    Restaurant: {
+      title: 'My Little Tavern',
+      image: mainImage,
+      content: {
+        title: 'Heavenly food',
+        body: 'I made a reservation in advance for my girlfriend, to say about the food that it was really heaven, we had a very good time, the behavior of the staff was excellent, I will definitely recommend',
+        date: 'Date of visit: February 2021',
+      },
+    },
+  };
 
   const initialize = () => {
     container = document.querySelector('#content');
   };
 
-  const addTitle = (title) => {
-    const h1 = document.createElement('h1');
-    h1.textContent = title;
-    container.appendChild(h1);
+  const createTab = (key) => {
+    const tab = new Tab();
+    tab.initialize(key);
+    tab.run();
   };
 
-  const addImage = (image) => {
-    const myImage = new Image();
-    myImage.src = image;
-    myImage.classList.add('main-image');
-    container.appendChild(myImage);
+  const addTab = (ul, title) => {
+    const li = document.createElement('li');
+    ul.appendChild(li);
+    li.textContent = title;
+    li.addEventListener('click', (event) => createTab(tabs[event.target.textContent]));
   };
 
-  const addArticle = (title, body, date) => {
-    const h4 = document.createElement('h4');
-    h4.textContent = title;
-    const p = document.createElement('p');
-    p.textContent = body;
-    const p2 = document.createElement('p');
-    p2.textContent = date;
-    container.appendChild(document.createElement('br'));
-    container.appendChild(h4);
-    container.appendChild(p);
-    container.appendChild(p2);
+  const addTabNavbar = () => {
+    const header = document.querySelector('header');
+    const navBar = document.createElement('nav');
+    const ul = document.createElement('ul');
+    header.appendChild(navBar);
+    navBar.appendChild(ul);
+    addTab(ul, 'Restaurant');
+    addTab(ul, 'Contact');
+    addTab(ul, 'Menu');
   };
 
   const run = () => {
-    addTitle('My Little Tavern');
-    addImage(mainImage);
-    addArticle('Heavenly food', 'I made a reservation in advance for my girlfriend, to say about the food that it was really heaven, we had a very good time, the behavior of the staff was excellent, I will definitely recommend', 'Date of visit: February 2021');
+    addTabNavbar();
+    createTab(tabs[ 'Restaurant' ]);
   };
 
   return { initialize, run, container };
