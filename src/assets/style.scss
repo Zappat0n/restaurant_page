@@ -1,11 +1,27 @@
-$body-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body {
-  color: $body-color;
+$font-family: 'Montserrat', sans-serif;
+
+h1 {
+  font: italic normal 600 2.5rem/4rem $font-family;
+  span {
+    font: italic normal 600 1.5rem/4rem $font-family;
+  }
 }
 
+h2 {
+  font: italic normal 600 1.5rem/2rem $font-family;
+}
+
+body {
+  font: italic normal 400 1rem/2rem $font-family;
+}
+
+
 .main-image {
-  width: 75%;
+  display: block;
+  margin: auto;
+  width: 85%;
 }
 
 nav ul {
@@ -19,15 +35,18 @@ nav li {
   border: solid;
   border-width: 1px 1px 0 1px;
   margin: 0 5px 0 0;
-
-  a {
-    padding: 0 10px;
-
-  }
+  padding: 10px;
+  background-color: white;
 }
 
-#_content {
+nav li:hover {
+  cursor: pointer;
+}
+
+
+#content {
   border: 1px solid;
+  padding: 10px;
 }
 
 #selected {
