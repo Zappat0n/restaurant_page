@@ -10,4 +10,12 @@ module.exports = {
   devServer: {
     contentBase: './dist',
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+    ],
+  },
 };
