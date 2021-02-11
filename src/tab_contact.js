@@ -1,7 +1,7 @@
 import contactImage from './assets/tim-mossholder-FH3nWjvia-U-unsplash.jpg';
 import tabFactory from './tab';
 
-function TabMenu() {
+function tabMenu() {
   const obj = {
     title: 'Contact information',
     image: contactImage,
@@ -13,13 +13,7 @@ function TabMenu() {
       },
     ],
   };
-
-  const initialize = () => {
-    const tab = tabFactory(obj);
-    tab.run();
-  };
-
-  return { initialize };
+  tabFactory(obj).run();
 }
 
-export { TabMenu as default };
+export { tabMenu as default };

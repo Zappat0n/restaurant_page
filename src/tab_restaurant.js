@@ -1,7 +1,7 @@
 import mainImage from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
 import tabFactory from './tab';
 
-function TabRestaurant() {
+function tabRestaurant() {
   const obj = {
     title: 'Restaurant',
     image: mainImage,
@@ -17,13 +17,7 @@ function TabRestaurant() {
       },
     ],
   };
-
-  const initialize = () => {
-    const tab = tabFactory(obj);
-    tab.run();
-  };
-
-  return { initialize };
+  tabFactory(obj).run();
 }
 
-export { TabRestaurant as default };
+export { tabRestaurant as default };

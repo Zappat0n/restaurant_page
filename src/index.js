@@ -1,6 +1,6 @@
-import TabRestaurant from './tab_restaurant';
-import TabMenu from './tab_menu';
-import TabContact from './tab_contact';
+import tabRestaurant from './tab_restaurant';
+import tabMenu from './tab_menu';
+import tabContact from './tab_contact';
 import styles from './assets/style.scss'; // eslint-disable-line no-unused-vars
 
 function MainPage() {
@@ -12,9 +12,9 @@ function MainPage() {
 
   const createTab = (key) => {
     switch (key) {
-      case 'Restaurant': (new TabRestaurant()).initialize(); break;
-      case 'Contact': (new TabContact()).initialize(); break;
-      case 'Menu': (new TabMenu()).initialize(); break;
+      case 'Restaurant': tabRestaurant(); break;
+      case 'Contact': tabContact(); break;
+      case 'Menu': tabMenu(); break;
       default:
         console.log('Tab not found');
     }

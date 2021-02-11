@@ -1,7 +1,7 @@
 import menuImage from './assets/stefan-johnson-xIFbDeGcy44-unsplash.jpg';
 import tabFactory from './tab';
 
-function TabMenu() {
+function tabMenu() {
   const obj = {
     title: 'Winter Menu',
     image: menuImage,
@@ -13,13 +13,7 @@ function TabMenu() {
       },
     ],
   };
-
-  const initialize = () => {
-    const tab = tabFactory(obj);
-    tab.run();
-  };
-
-  return { initialize };
+  tabFactory(obj).run();
 }
 
-export { TabMenu as default };
+export { tabMenu as default };

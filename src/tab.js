@@ -30,7 +30,6 @@ function tabFactory(obj) {
     container.appendChild(p2);
   };
 
-
   const run = () => {
     container.innerHTML = '';
     addTitle(obj.title);
