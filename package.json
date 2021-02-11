@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development",
-    "eslint": "eslint .",
-    "start": "webpack serve --open",
-    "scss": "node-sass -watch scss -o css"
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",

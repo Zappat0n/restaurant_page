@@ -15,8 +15,7 @@ function MainPage() {
       case 'Restaurant': tabRestaurant(); break;
       case 'Contact': tabContact(); break;
       case 'Menu': tabMenu(); break;
-      default:
-        console.log('Tab not found');
+      default: tabRestaurant();
     }
   };
 
