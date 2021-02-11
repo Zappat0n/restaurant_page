@@ -3,7 +3,7 @@ import menuModule from './tab_menu';
 import contactModule from './tab_contact';
 import styles from './assets/style.scss'; // eslint-disable-line no-unused-vars
 
-function mainPage(container) {
+const mainPage = (container) => {
   const createTab = (key) => {
     switch (key) {
       case 'Restaurant': restaurantModule(container); break;
@@ -35,6 +35,6 @@ function mainPage(container) {
   };
 
   return { run };
-}
+};
 
 mainPage(document.querySelector('#content')).run();
