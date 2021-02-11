@@ -1,7 +1,7 @@
 import contactImage from './assets/tim-mossholder-FH3nWjvia-U-unsplash.jpg';
 import tabFactory from './tab';
 
-function tabMenu() {
+const contactModule = (container) => {
   const obj = {
     title: 'Contact information',
     image: contactImage,
@@ -13,7 +13,7 @@ function tabMenu() {
       },
     ],
   };
-  tabFactory(obj).run();
-}
+  tabFactory(container).appendChild(obj);
+};
 
-export { tabMenu as default };
+export { contactModule as default };

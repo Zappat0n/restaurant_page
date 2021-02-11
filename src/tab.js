@@ -1,7 +1,5 @@
 
-function tabFactory(obj) {
-  const container = document.querySelector('#content');
-
+const tabFactory = (container) => {
   const addTitle = (title) => {
     const h1 = document.createElement('h2');
     h1.textContent = title;
@@ -30,7 +28,7 @@ function tabFactory(obj) {
     container.appendChild(p2);
   };
 
-  const run = () => {
+  const appendChild = (obj) => {
     container.innerHTML = '';
     addTitle(obj.title);
     addImage(obj.image);
@@ -39,7 +37,7 @@ function tabFactory(obj) {
     });
   };
 
-  return { run };
-}
+  return { appendChild };
+};
 
 export { tabFactory as default };

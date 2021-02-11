@@ -1,21 +1,15 @@
-import tabRestaurant from './tab_restaurant';
-import tabMenu from './tab_menu';
-import tabContact from './tab_contact';
+import restaurantModule from './tab_restaurant';
+import menuModule from './tab_menu';
+import contactModule from './tab_contact';
 import styles from './assets/style.scss'; // eslint-disable-line no-unused-vars
 
-function MainPage() {
-  let container = '';
-
-  const initialize = () => {
-    container = document.querySelector('#content');
-  };
-
+function mainPage(container) {
   const createTab = (key) => {
     switch (key) {
-      case 'Restaurant': tabRestaurant(); break;
-      case 'Contact': tabContact(); break;
-      case 'Menu': tabMenu(); break;
-      default: tabRestaurant();
+      case 'Restaurant': restaurantModule(container); break;
+      case 'Contact': contactModule(container); break;
+      case 'Menu': menuModule(container); break;
+      default: restaurantModule(container);
     }
   };
 
@@ -40,9 +34,7 @@ function MainPage() {
     createTab('Restaurant');
   };
 
-  return { initialize, run, container };
+  return { run };
 }
 
-const main = new MainPage();
-main.initialize();
-main.run();
+mainPage(document.querySelector('#content')).run();
