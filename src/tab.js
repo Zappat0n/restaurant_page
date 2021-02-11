@@ -1,12 +1,6 @@
 
-function Tab() {
-  let obj;
-  let container;
-
-  const initialize = (_obj) => {
-    obj = _obj;
-    container = document.querySelector('#content');
-  };
+function tabFactory(obj) {
+  const container = document.querySelector('#content');
 
   const addTitle = (title) => {
     const h1 = document.createElement('h2');
@@ -46,7 +40,7 @@ function Tab() {
     });
   };
 
-  return { initialize, run };
+  return { run };
 }
 
-export { Tab as default };
+export { tabFactory as default };

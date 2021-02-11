@@ -1,5 +1,5 @@
 import mainImage from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
-import Tab from './tab';
+import tabFactory from './tab';
 
 function TabRestaurant() {
   const obj = {
@@ -19,8 +19,7 @@ function TabRestaurant() {
   };
 
   const initialize = () => {
-    const tab = new Tab();
-    tab.initialize(obj);
+    const tab = tabFactory(obj);
     tab.run();
   };
 

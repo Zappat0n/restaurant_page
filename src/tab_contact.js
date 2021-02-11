@@ -1,5 +1,5 @@
 import contactImage from './assets/tim-mossholder-FH3nWjvia-U-unsplash.jpg';
-import Tab from './tab';
+import tabFactory from './tab';
 
 function TabMenu() {
   const obj = {
@@ -15,8 +15,7 @@ function TabMenu() {
   };
 
   const initialize = () => {
-    const tab = new Tab();
-    tab.initialize(obj);
+    const tab = tabFactory(obj);
     tab.run();
   };
 
