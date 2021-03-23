@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$font-family: 'Montserrat', sans-serif;
+
+h1 {
+  font: italic normal 600 2.5rem/4rem $font-family;
+
+  span {
+    font: italic normal 600 1.5rem/4rem $font-family;
+  }
+}
+
+h2 {
+  font: italic normal 600 1.5rem/2rem $font-family;
+}
+
+body {
+  font: italic normal 400 1rem/2rem $font-family;
+}
+
+.main-image {
+  display: block;
+  margin: auto;
+  width: 85%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  border: solid;
+  border-width: 1px 1px 0 1px;
+  margin: 0 5px 0 0;
+  padding: 10px;
+  background-color: white;
+}
+
+nav li:hover {
+  cursor: pointer;
+}
+
+#content {
+  border: 1px solid;
+  padding: 10px;
+}
+
+#selected {
+  padding-bottom: 1px;
+  background: white;
+}
